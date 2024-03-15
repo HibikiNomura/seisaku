@@ -1,0 +1,50 @@
+<!--成績情報-->
+<h3>点数入力</h3>
+<form class="form py-4 needs-validation h-adr" method="post" th:action="@{/Grades}" th:object="${seisekihyou}">
+	<div class="row mt-3">
+		<label for="studentnumber" class="col-4 col-form-label text-end">学生番号</label>
+		<div class="col-4">
+			<input type="text" class="form-control" id="studentnumber" name="studentnumber" th:field="*{studentnumber}"
+				th:classappend="${#fields.hasErrors('studentnumber')} ? 'is-invalid' : 'is-valid'" />
+			<div th:if="${#fields.hasErrors('studentnumber')}" th:errors="*{studentnumber}" class="invalid-feedback">
+				errors!</div>
+		</div>
+	<div class="row mt-3">
+		<label for="japanese" class="col-4 col-form-label text-end">国語</label>
+		<div class="col-4">
+			<input type="text" class="form-control" id="japanese" name="japanese" th:field="*{japanese}"
+				th:classappend="${#fields.hasErrors('japanese')} ? 'is-invalid' : 'is-valid'" />
+			<div th:if="${#fields.hasErrors('japanese')}" th:errors="*{japanese}" class="invalid-feedback">
+				errors!</div>
+		</div>
+		<label for="math" class="col-4 col-form-label text-end">数学</label>
+		<div class="col-4">
+			<input type="text" class="form-control" id="math" name="math" th:field="*{math}"
+				th:classappend="${#fields.hasErrors('math')} ? 'is-invalid' : 'is-valid'" />
+			<div th:if="${#fields.hasErrors('math')}" th:errors="*{math}" class="invalid-feedback">
+				errors!</div>
+		</div>
+		<label for="science" class="col-4 col-form-label text-end">理科</label>
+		<div class="col-4">
+			<input type="text" class="form-control" id="science" name="science" th:field="*{science}"
+				th:classappend="${#fields.hasErrors('science')} ? 'is-invalid' : 'is-valid'" />
+			<div th:if="${#fields.hasErrors('science')}" th:errors="*{science}" class="invalid-feedback">
+				errors!</div>
+		</div>
+		<label for="society" class="col-4 col-form-label text-end">社会</label>
+		<div class="col-4">
+			<input type="text" class="form-control" id="society" name="society" th:field="*{society}"
+				th:classappend="${#fields.hasErrors('society')} ? 'is-invalid' : 'is-valid'" />
+			<div th:if="${#fields.hasErrors('society')}" th:errors="*{society}" class="invalid-feedback">
+				errors!</div>
+		</div>
+		<label for="english" class="col-4 col-form-label text-end">英語</label>
+		<div class="col-4">
+			<input type="text" class="form-control" id="english" name="english" th:field="*{english}"
+				th:classappend="${#fields.hasErrors('english')} ? 'is-invalid' : 'is-valid'" />
+			<div th:if="${#fields.hasErrors('english')}" th:errors="*{english}" class="invalid-feedback">
+				errors!</div>
+		</div>
+		<button onclick="location.href='http://localhost:8080/Top2'">送信</button>
+	</div>
+</form>

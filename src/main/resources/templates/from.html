@@ -1,0 +1,43 @@
+<!--ログイン画面-->
+<h3>ログインフォーム</h3>
+<!doctype html>
+<form class="form py-4 needs-validation h-adr" method="post" th:action="@{/from}" th:object="${gakuseihyou}">
+	<div class="row mt-3">
+		<label for="studentnumber" class="col-4 col-form-label text-end">学生番号</label>
+		<div class="col-4">
+			<input type="text" class="form-control" id="studentnumber" name="studentnumber" th:field="*{studentnumber}"
+				th:classappend="${#fields.hasErrors('studentnumber')} ? 'is-invalid' : 'is-valid'" />
+			<div th:if="${#fields.hasErrors('studentnumber')}" th:errors="*{studentnumber}" class="invalid-feedback">
+				errors!</div>
+		</div>
+		<label for="name" class="col-4 col-form-label text-end">名前</label>
+		<div class="col-4">
+			<input type="text" class="form-control" id="name" name="name" th:field="*{name}"
+				th:classappend="${#fields.hasErrors('name')} ? 'is-invalid' : 'is-valid'" />
+			<div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="invalid-feedback">
+				errors!</div>
+		</div>
+		<label for="age" class="col-4 col-form-label text-end">年齢</label>
+		<div class="col-4">
+			<input type="text" class="form-control" id="age" name="age" th:field="*{age}"
+				th:classappend="${#fields.hasErrors('age')} ? 'is-invalid' : 'is-valid'" />
+			<div th:if="${#fields.hasErrors('age')}" th:errors="*{age}" class="invalid-feedback">
+				errors!</div>
+		</div>
+		<label for="mail" class="col-4 col-form-label text-end">メールアドレス</label>
+		<div class="col-4">
+			<input type="text" class="form-control" id="mail" name="mail" th:field="*{mail}"
+				th:classappend="${#fields.hasErrors('mail')} ? 'is-invalid' : 'is-valid'" />
+			<div th:if="${#fields.hasErrors('mail')}" th:errors="*{mail}" class="invalid-feedback">
+				errors!</div>
+		</div>
+		<label for="phone" class="col-4 col-form-label text-end">電話番号</label>
+		<div class="col-4">
+			<input type="text" class="form-control" id="phone" name="phone" th:field="*{phone}"
+				th:classappend="${#fields.hasErrors('phone')} ? 'is-invalid' : 'is-valid'" />
+			<div th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}" class="invalid-feedback">
+				errors!</div>
+		</div>
+		<button onclick="location.href='http://localhost:8080/Top2'">送信</button>
+	</div>
+</form>

@@ -1,0 +1,38 @@
+<form class="form py-4 needs-validation h-adr" method="post" th:action="@{/attendance}" th:object="${syusekihyou}">
+ 	<div class="row mt-3">
+		<label for="studentnumber" class="col-4 col-form-label text-end">学生番号</label>
+		<div class="col-4">
+			<input type="text" class="form-control" id="studentnumber" name="studentnumber" th:field="*{studentnumber}"
+				th:classappend="${#fields.hasErrors('studentnumber')} ? 'is-invalid' : 'is-valid'" />
+			<div th:if="${#fields.hasErrors('studentnumber')}" th:errors="*{studentnumber}" class="invalid-feedback">
+				errors!</div>
+		</div>
+    <div class="row mt-3">
+        <label for="syuketu" class="col-4 col-form-label text-end">出欠の選択</label>
+        <div class="col-4">
+            <select name="syuseki" class="form-control" id="syuketu" th:field="*{syuketu}"
+                th:classappend="${#fields.hasErrors('syuketu')} ? 'is-invalid' : 'is-valid'" />
+                <option value="出席">出席</option>
+                <option value="欠席">欠席</option>
+            </select>
+            <div th:if="${#fields.hasErrors('syuketu')}" th:errors="*{syuketu}" class="invalid-feedback">
+                errors!</div>
+        </div>
+    </div>
+
+    
+    <div class="row mt-3">
+        <label for="syuseki" class="col-4 col-form-label text-end">出席日時 / 欠席登録日時</label>
+        <div class="col-4">
+            <input type="datetime-local" id="syuseki" min="2024-01-01T08:30" max="2024-12-31T16:30"class="form-control" name="syuseki" th:field="*{syuseki}"
+                th:classappend="${#fields.hasErrors('syuseki')} ? 'is-invalid' : 'is-valid'" />
+            <div th:if="${#fields.hasErrors('syuseki')}" th:errors="*{syuseki}" class="invalid-feedback">
+                errors!</div>
+        </div>
+    </div>
+    
+ <div class="my-4">
+    <input type="submit" class="btn btn-primary"value="送信"/>
+ <footer class="my-5 pt-5 text-body-secondary text-center text-small">
+     </div>
+    </form>
